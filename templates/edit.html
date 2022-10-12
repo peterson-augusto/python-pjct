@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/styles/style.css" />
+
+    <title>Cadastro</title>
+    <style>
+      body {
+        background-image: url(imgs/purple-image.jpg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form">
+        <form action="/edit/{{ usuario.id }}" class="container" method="post">
+          <div class="form-header">
+            <div class="title">
+              <h1 style="text-align: center;">Editar {{ usuario.nome }}</h1>
+            </div>
+            <div class="login-button">
+              <button><a href="/login">Entrar</a></button>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="container-a">
+              <div class="input-box">
+                <label for="firstname">Primeiro nome</label>
+                <input
+                  type="text"
+                  id="p_nome"
+                  name="p_nome"
+                  placeholder="Digite seu primeiro nome"
+                  required
+                  class="form_control"
+                  value="{{ usuario.p_nome }}"
+                />
+              </div>
+
+              <div class="input-box">
+                <label for="lastname">Sobrenome</label>
+                <input
+                  type="text"
+                  id="s_nome"
+                  name="s_nome"
+                  placeholder="Digite seu sobrenome"
+                  required
+                  class="form-control"
+                  value="{{ usuario.s_nome }}"
+                />
+              </div>
+
+              <div class="input-box">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Digite seu email"
+                  required
+                  value="{{ usuario.email }}"
+                />
+              </div>
+            </div>
+
+            <div class="container-b">
+              <div class="input-box">
+                <label for="date">Data de nascimento</label>
+                <input
+                  type="date"
+                  id="dt_nascimento"
+                  name="dt_nascimento"
+                  placeholder="Data de aniversário"
+                  required
+                  value="{{ usuario.dt_nascimento }}"
+                />
+              </div>
+
+              <div class="input-box">
+                <label for="password">Senha</label>
+                <input
+                  type="password"
+                  id="senha"
+                  name="senha"
+                  placeholder="Digite sua senha"
+                  required
+                  value="{{ usuario.senha }}"
+                />
+              </div>
+
+              <div class="input-box">
+                <label for="Confirmpassword">Confirme sua senha</label>
+                <input
+                  type="password"
+                  id="senha_confirme"
+                  name="senha_confirme"
+                  placeholder="Digite sua senha novamente"
+                  required
+                  value="{{ usuario.senha_confirme}}"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="gender-inputs">
+            <div class="gender-title">
+              <h6>Gênero</h6>
+            </div>
+
+            <div class="gender-group">
+              <div class="gender-input">
+                <input type="radio" id="female" name="gender" />
+                <label for="female">Feminino</label>
+              </div>
+              <br />
+              <div class="gender-input">
+                <input type="radio" id="male" name="gender" />
+                <label for="male">Masculino</label>
+              </div>
+              <br />
+              <div class="gender-input">
+                <input type="radio" id="others" name="gender" />
+                <label for="others">Outros</label>
+              </div>
+            </div>
+          </div>
+          <div class="continue-button">
+            <button type="submit" class="continue">Continuar</a></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
